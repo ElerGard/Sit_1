@@ -1,0 +1,6 @@
+tail -n 40 firstFile.txt | cat > secondFile.txt
+head -n 10 secondFile.txt| cat > thirdFile.txt
+sed -r 's/коко/куку/g' secondFile.txt | grep 'куку' | head -n 3 | cat >> thirdFile.txt
+cat thirdFile.txt | sort | uniq -c > middle.txt
+cat middle.txt > thirdFile.txt
+rm middle.txt
